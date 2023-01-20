@@ -1,0 +1,56 @@
+@import "vanilla-framework";
+@include vanilla;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.post-card {
+  border-top: 3px solid #a87c9d;
+  position: relative;
+  display: grid;
+  grid-template-rows: 26px auto;
+
+  .post-card__heading {
+    text-transform: uppercase;
+    font-size: 14px;
+    border-bottom: 1px dotted #ccc;
+    padding: 0 0.5rem 0.8rem 1rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+    line-height: normal;
+    font-weight: $font-weight-regular-text;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .post-card__content {
+    display: grid;
+    grid-template-rows: 143px auto 1px 42px;
+
+    @media (max-width: 1032px) {
+      grid-template-rows: 223px auto 1px 42px;
+    }
+
+    @media (max-width: 870px) {
+      grid-template-rows: auto auto 1px 42px;
+    }
+
+    .p-card__image {
+      padding: 1rem;
+    }
+    .p-card__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h3 {
+        font-weight: $font-weight-regular-text;
+      }
+    }
+  }
+}
